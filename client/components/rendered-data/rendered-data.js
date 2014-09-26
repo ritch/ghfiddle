@@ -6,14 +6,7 @@ angular.module('ghaRenderedData', [])
       controller: 'RenderedDataController'
     };
   })
-  .controller('RenderedDataController', ['$scope', function($scope) {
-    console.log('controller')
-
-    $scope.getType = function (item) {
-      if (angular.isArray(item)) return 'array';
-      if (angular.isObject(item)) return 'object';
-    };
-
+  .controller('RenderedDataController', ['$scope', '$compile', '$sce', function($scope, $compile, $sce) {
     $scope.data = [{
       number: 1,
       assignee: 'ritch'
@@ -21,4 +14,25 @@ angular.module('ghaRenderedData', [])
       number: 2,
       assignee: 'jeffbcross'
     }];
+
+
+
+    $scope.$watch('templateSource', function(templateSource) {
+      if(!templateSource) return;
+
+      templateSource = ['<div>', templateSource, '</div>'].join('');
+
+      var el = $compile(templateSource)($scope);
+      el = el[0];
+      console.log('el', el);
+      if(!el) return;
+
+
+
+      $scope.$evalAsync(function() {
+        var html = el.innerHTML;
+        $scope.renderedHTML = $sce.trustAsHtml(html);
+        console.log('$scope.renderedHTML', $scope.renderedHTML.$$unwrapTrustedValue());
+      });
+    });
   }]);

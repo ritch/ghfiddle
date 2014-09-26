@@ -1,4 +1,5 @@
 angular.module('ghApp', [
-    'ngRoute', 
-    'ghaLoginForm', 
-    'ghaRenderedData']);
+    'ngRoute',
+    'ghaLoginForm',
+    'ghaRenderedData',
+    'ghaDataTemplateEditor']);
