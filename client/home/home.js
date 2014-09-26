@@ -3,9 +3,7 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        controller: function($rootScope) {
-          $rootScope.title = 'Home';
-        },
+        controller: 'HomeController',
         templateUrl: '/home/home.html'
       });
   })
@@ -13,5 +11,10 @@ angular
     '$scope',
     function($scope) {
       $scope.working = 'yes';
+      $scope.loggedIn = false;
+
+      $scope.startLogin = function() {
+        console.log('starting!!!!!');
+      }
     }
   ]);

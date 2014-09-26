@@ -1,0 +1,18 @@
+<div>
+  <div ng-repeat="item in data">
+    <div ng-switch="getType(item)">
+      <div ng-switch-when="object">
+        <div ng-repeat="(key, val) in item">
+
+        </div>
+      </div>
+      <div ng-switch-when="array">
+        Array!
+      </div>
+      <div ng-switch-default>
+        Good grief
+      </div>
+    </div>
+    {{item.number}} assigned to {{item.assignee}}
+  </div>
+</div>
