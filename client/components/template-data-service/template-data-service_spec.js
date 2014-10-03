@@ -9,19 +9,19 @@ describe('templateDataService', function() {
 
 
   it('should have a data object', function() {
-    expect(templateDataService.data).toBeDefined();
+    expect(templateDataService._data).toBeDefined();
   });
 
 
   describe('.clear()', function() {
     it('should clear the data object but keep the reference', function() {
-      var data = templateDataService.data;
-      templateDataService.data.foo = 'bar';
+      var data = templateDataService._data;
+      templateDataService._data.foo = 'bar';
       expect(data.foo).toBe('bar');
 
       templateDataService.clear();
       expect(data.foo).toBeUndefined();
-      expect(templateDataService.data).toBe(data);
+      expect(templateDataService._data).toBe(data);
     });
   });
 });
