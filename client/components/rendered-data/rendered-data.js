@@ -12,9 +12,10 @@ angular.module('ghaRenderedData', [])
     $scope.$sce = $sce;
 
     function applyTemplateToDom () {
-      console.log('applyTemplateToDom');
+      if (!compiledTemplate) return;
+      var untrustedHtml = compiledTemplate($scope);
       $scope.$evalAsync(function() {
-        $scope.renderedHTML = $sce.trustAsHtml(compiledTemplate($scope).html());
+        $scope.renderedHTML = $sce.trustAsHtml(untrustedHtml.html());
       });
     }
 
