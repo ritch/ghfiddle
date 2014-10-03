@@ -12,9 +12,14 @@
     "loopback-boot": "^2.0.0",
     "loopback-datasource-juggler": "^2.7.0",
     "serve-favicon": "^2.0.1",
-    "bootstrap": "^3.2.0"
+    "bootstrap": "^3.2.0",
+    "karma": "~0.12.24"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.5"
   }
 }
