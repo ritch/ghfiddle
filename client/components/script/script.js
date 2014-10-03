@@ -14,8 +14,7 @@ angular.module('ghaScript', [])
         mode: 'javascript'
     };
 
-    var source = "$scope.foo = 'bar'";
-    source += "\nconsole.log('hello');";
+    var source = "data.message = 'bar';";
 
     $scope.source = source;
 

@@ -8,7 +8,7 @@ angular
     };
   })
   .controller('DataTemplateEditorController', ['$scope', function($scope) {
-    $scope.templateSource = '<div><h1>{{data[0].assignee}}</h1></div>';
+    $scope.templateSource = '<h1>{{data.message}}</h1>';
     $scope.editorOptions = {
         lineWrapping : true,
         lineNumbers: true,
