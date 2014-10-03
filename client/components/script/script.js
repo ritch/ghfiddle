@@ -6,7 +6,7 @@ angular.module('ghaScript', [])
       controller: 'ScriptController'
     };
   })
-  .controller('ScriptController', ['$scope', function($scope) {
+  .controller('ScriptController', ['$scope', 'templateDataService', function($scope, templateDataService) {
 
     var source = "$scope.foo = 'bar'";
     source += "\nconsole.log('hello');";
@@ -15,15 +15,16 @@ angular.module('ghaScript', [])
 
     $scope.$watch('source', function(source) {
       var fn;
-
+      $scope.error = $scope.runtimeError = null;
       try {
-        fn = eval('(function($scope) { ' + $scope.source + '})');
+        fn = eval('(function(data) { ' + $scope.source + '})');
       } catch(e) {
         return $scope.error = e;
       }
 
       try {
-        fn($scope);
+        templateDataService.clear();
+        fn(templateDataService._data);
       } catch(e) {
         $scope.runtimeError = e;
       }

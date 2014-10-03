@@ -3,4 +3,5 @@ angular.module('ghApp', [
     'ghaLoginForm',
     'ghaRenderedData',
     'ghaDataTemplateEditor',
-    'ghaScript']);
+    'ghaScript',
+    'ghaTemplateDataService']);

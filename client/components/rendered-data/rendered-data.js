@@ -6,16 +6,8 @@ angular.module('ghaRenderedData', [])
       controller: 'RenderedDataController'
     };
   })
-  .controller('RenderedDataController', ['$scope', '$compile', '$sce', function($scope, $compile, $sce) {
-    $scope.data = [{
-      number: 1,
-      assignee: 'ritch'
-    }, {
-      number: 2,
-      assignee: 'jeffbcross'
-    }];
-
-
+  .controller('RenderedDataController', ['$scope', '$compile', '$sce',  'templateDataService', function($scope, $compile, $sce, templateDataService) {
+    $scope.data = templateDataService._data;
 
     $scope.$watch('templateSource', function(templateSource) {
       if(!templateSource) return;
