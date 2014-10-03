@@ -12,6 +12,6 @@ angular
     $scope.editorOptions = {
         lineWrapping : true,
         lineNumbers: true,
-        mode: 'htmlembedded'
+        mode: 'htmlembeded'
     };
   }]);
