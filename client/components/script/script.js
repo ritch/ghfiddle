@@ -8,6 +8,12 @@ angular.module('ghaScript', [])
   })
   .controller('ScriptController', ['$scope', 'templateDataService', function($scope, templateDataService) {
 
+    $scope.editorOptions = {
+        lineWrapping : true,
+        lineNumbers: true,
+        mode: 'javascript'
+    };
+
     var source = "$scope.foo = 'bar'";
     source += "\nconsole.log('hello');";
 

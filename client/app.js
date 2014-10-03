@@ -4,4 +4,5 @@ angular.module('ghApp', [
     'ghaRenderedData',
     'ghaDataTemplateEditor',
     'ghaScript',
-    'ghaTemplateDataService']);
+    'ghaTemplateDataService',
+    'ui.codemirror']);

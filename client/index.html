@@ -13,8 +13,22 @@
     <script src="/components/data-template-editor/data-template-editor.js"></script>
     <script src="/components/script/script.js"></script>
     <script src="/components/template-data-service/template-data-service.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- code mirror thing -->
+    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
+<script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+
+    <!-- code mirror modes -->
+    <script type="text/javascript" src="bower_components/codemirror/mode/htmlembedded/htmlembedded.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/mode/javascript/javascript.js"></script>
   </head>
   <body>
+  <div class="container-fluid">
     <ng-view></ng-view>
+  </div>
+
   </body>
 </html>
