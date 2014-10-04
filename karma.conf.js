@@ -18,10 +18,15 @@ module.exports = function(config) {
       'client/bower_components/angular/angular.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/app.js',
+      'client/components/**/*.html',
       'client/home/**/*.js',
       'client/components/**/*.js'
     ],
 
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'client/',
+      moduleName: 'templates'
+    },
 
     // list of files to exclude
     exclude: [
@@ -31,6 +36,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      '**/*.html': ['ng-html2js']
     },
 
 

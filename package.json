@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "karma-jasmine": "~0.1.5",
-    "karma-chrome-launcher": "~0.1.5"
+    "karma-chrome-launcher": "~0.1.5",
+    "karma-ng-html2js-preprocessor": "~0.1.0"
   }
 }
